@@ -1,0 +1,234 @@
+<div class="container">
+  <form id="doc-form" class="doc-form">
+ 	<div class="row" ng-if="Success">
+  		<div class="alert alert-success">
+        <strong>Success!</strong> {{Success}}
+    	</div>
+     </div> 
+     <div class="row" ng-if="Error">
+  		<div class="alert alert-danger">
+        <strong>Error!</strong> {{Error}}
+    	</div>
+     </div>
+     <br/>
+     
+	  <div class="row">
+	  	<div class="col-xs-6 col-sm-3 col-md-3 col-md-offset-3">
+	    <label for="person">Responsible Person :</label>
+	    </div>
+	    <div class="col-xs-6 col-sm-3 col-md-3">
+	    <select autofocus required name="person" id="person" class="form-control" ng-model="documentation.responsiblePerson"> 
+	    <option value=''>- Select Employee Name -</option> 
+	    <option value="1"> Hr Ritika Roshan </option>
+	    <option value="2"> Networking Ravi Kumar</option>
+	    <option value="3"> R&BD Rohit </option>
+	    <option value="4"> Docs person </option>
+	    </select> </br> </br>
+	    </div>
+	   </div>
+
+	   <div class="row">
+	   <div class="col-xs-6 col-sm-3 col-md-3">
+	  	<label for="offerLetter">Copy of Offer Letter Given</label>
+	  	</div>
+		<div class="col-xs-6 col-sm-3 col-md-3">
+			<div class="onoffswitch">
+		    <input type="checkbox" name="offerLetter" ng-model="documentation.offerLetter" class="onoffswitch-checkbox" id="offerLetter">
+		    <label class="onoffswitch-label" for="offerLetter">
+		    <span class="onoffswitch-inner"></span>
+		    <span class="onoffswitch-switch"></span>
+		    </label>
+		    </div> 
+		</div>
+		<div class="col-xs-6 col-sm-3 col-md-3">
+	   	<label for="qualifiCer">Qualification Certificates</label>
+	  	</div>
+		<div class="col-xs-6 col-sm-3 col-md-3">
+			<div class="onoffswitch">
+		    <input type="checkbox" name="qualifiCer" ng-model="documentation.qualifiCer" class="onoffswitch-checkbox" id="qualifiCer">
+		    <label class="onoffswitch-label" for="qualifiCer">
+		    <span class="onoffswitch-inner"></span>
+		    <span class="onoffswitch-switch"></span>
+		    </label>
+		    </div> 
+	  	</div>
+	    </div>
+
+	  <div class="row">
+	  	<div class="col-xs-6 col-sm-3 col-md-3">
+	  	<label for="idProof">ID Proof</label>
+	  	</div>
+	    <div class="col-xs-6 col-sm-3 col-md-3">
+			<div class="onoffswitch">
+		    <input type="checkbox" name="idProof" ng-model="documentation.idProof" class="onoffswitch-checkbox" id="idProof">
+		    <label class="onoffswitch-label" for="idProof">
+		    <span class="onoffswitch-inner"></span>
+		    <span class="onoffswitch-switch"></span>
+		    </label>
+		    </div> 
+		</div>
+		<div class="col-xs-6 col-sm-3 col-md-3">
+	   	<label for="expLetter">Experience/Relieving letter from previous organization</label>
+	  	</div>
+		<div class="col-xs-6 col-sm-3 col-md-3">
+			<div class="onoffswitch">
+		    <input type="checkbox" name="expLetter" ng-model="documentation.expLetter" class="onoffswitch-checkbox" id="expLetter">
+		    <label class="onoffswitch-label" for="expLetter">
+		    <span class="onoffswitch-inner"></span>
+		    <span class="onoffswitch-switch"></span>
+		    </label>
+    		</div> 
+	  	</div>
+	   </div>
+
+	   <div class="row">
+	  	<div class="col-xs-6 col-sm-3 col-md-3">
+	  	<label for="addressProof">Address Proof</label>
+	  	</div>
+	   <div class="col-xs-6 col-sm-3 col-md-3">
+			<div class="onoffswitch">
+		    <input type="checkbox" name="addressProof" ng-model="documentation.addressProof" class="onoffswitch-checkbox" id="addressProof">
+		    <label class="onoffswitch-label" for="addressProof">
+		    <span class="onoffswitch-inner"></span>
+		    <span class="onoffswitch-switch"></span>
+		    </label>
+		    </div> 
+		</div>
+		<div class="col-xs-6 col-sm-3 col-md-3">
+	   	<label for="medical">Medical Certificate & Fitness Certificate</label>
+	  	</div>
+		<div class="col-xs-6 col-sm-3 col-md-3">
+			<div class="onoffswitch">
+		    <input type="checkbox" name="medical" ng-model="documentation.medical" class="onoffswitch-checkbox" id="medical">
+		    <label class="onoffswitch-label" for="medical">
+		    <span class="onoffswitch-inner"></span>
+		    <span class="onoffswitch-switch"></span>
+		    </label>
+		    </div> 
+	  	</div>
+	    </div>
+	  
+	  <div class="row">
+	  	<div class="col-xs-6 col-sm-3 col-md-3">
+	  	<label for="DOBCer">Date of Birth certificate</label>
+	  	</div>
+	   <div class="col-xs-6 col-sm-3 col-md-3">
+			<div class="onoffswitch">
+		    <input type="checkbox" name="DOBCer" ng-model="documentation.DOBCer" class="onoffswitch-checkbox" id="DOBCer">
+		    <label class="onoffswitch-label" for="DOBCer">
+		    <span class="onoffswitch-inner"></span>
+		    <span class="onoffswitch-switch"></span>
+		    </label>
+		    </div> 
+		</div>
+		<div class="col-xs-6 col-sm-3 col-md-3">
+		<label for="bankAccNo">Bank Account Number</label>
+	  	</div>
+		<div class="col-xs-6 col-sm-3 col-md-3">
+			<div class="onoffswitch">
+		    <input type="checkbox" name="bankAccNo" ng-model="documentation.bankAccNo" class="onoffswitch-checkbox" id="bankAccNo">
+		    <label class="onoffswitch-label" for="bankAccNo">
+		    <span class="onoffswitch-inner"></span>
+		    <span class="onoffswitch-switch"></span>
+		    </label>
+		    </div> 
+	  	</div>
+	    </div>
+
+ 		<div class="row">
+ 		<div class="col-xs-6 col-sm-3 col-md-3">
+	  	<label for="trainingCer">Training Certificate if Fresher</label>
+	  	</div>
+	   <div class="col-xs-6 col-sm-3 col-md-3">
+			<div class="onoffswitch">
+		    <input type="checkbox" name="trainingCer" ng-model="documentation.trainingCer" class="onoffswitch-checkbox" id="trainingCer">
+		    <label class="onoffswitch-label" for="trainingCer">
+		    <span class="onoffswitch-inner"></span>
+		    <span class="onoffswitch-switch"></span>
+		    </label>
+		    </div> 
+		</div>
+		<div class="col-xs-6 col-sm-3 col-md-3">
+		<label for="joiningReport">Joining Report of New Employees</label>
+	  	</div>
+		<div class="col-xs-6 col-sm-3 col-md-3">
+			<div class="onoffswitch">
+		    <input type="checkbox" name="joiningReport" ng-model="documentation.joiningReport" class="onoffswitch-checkbox" id="joiningReport">
+		    <label class="onoffswitch-label" for="joiningReport">
+		    <span class="onoffswitch-inner"></span>
+		    <span class="onoffswitch-switch"></span>
+		    </label>
+		    </div> 
+	  	</div>
+	    </div>
+
+ 	<div class="row">
+ 		<div class="col-xs-6 col-sm-3 col-md-3">
+	  	<label for="salarySlip">Last 3 Salary Slips</label>
+	  	</div>
+	   <div class="col-xs-6 col-sm-3 col-md-3">
+			<div class="onoffswitch">
+		    <input type="checkbox" name="salarySlip" ng-model="documentation.salarySlip" class="onoffswitch-checkbox" id="salarySlip">
+		    <label class="onoffswitch-label" for="salarySlip">
+		    <span class="onoffswitch-inner"></span>
+		    <span class="onoffswitch-switch"></span>
+		    </label>
+		    </div> 
+		</div>
+		<div class="col-xs-6 col-sm-3 col-md-3">
+		<label for="codeOfConduct">Code of Conduct and Ethical Standards</label>
+	  	</div>
+		<div class="col-xs-6 col-sm-3 col-md-3">
+			<div class="onoffswitch">
+		    <input type="checkbox" name="codeOfConduct" ng-model="documentation.codeOfConduct" class="onoffswitch-checkbox" id="codeOfConduct">
+		    <label class="onoffswitch-label" for="codeOfConduct">
+		    <span class="onoffswitch-inner"></span>
+		    <span class="onoffswitch-switch"></span>
+		    </label>
+		    </div> 
+	  	</div>
+	    </div>
+
+	    <div class="row">
+	    <div class="col-xs-6 col-sm-3 col-md-3">
+	  	<label for="photograph">Passport Size Photographs 8</label>
+	  	</div>
+	   <div class="col-xs-6 col-sm-3 col-md-3">
+			<div class="onoffswitch">
+		    <input type="checkbox" name="photograph" ng-model="documentation.photograph" class="onoffswitch-checkbox" id="photograph">
+		    <label class="onoffswitch-label" for="photograph">
+		    <span class="onoffswitch-inner"></span>
+		    <span class="onoffswitch-switch"></span>
+		    </label>
+		    </div> 
+		</div>
+		<div class="col-xs-6 col-sm-3 col-md-3">
+		<label for="empAgreement">Employee Agreement</label>
+	  	</div>
+		<div class="col-xs-6 col-sm-3 col-md-3">
+			<div class="onoffswitch">
+		    <input type="checkbox" name="empAgreement" ng-model="documentation.empAgreement" class="onoffswitch-checkbox" id="empAgreement">
+		    <label class="onoffswitch-label" for="empAgreement">
+		    <span class="onoffswitch-inner"></span>
+		    <span class="onoffswitch-switch"></span>
+		    </label>
+		    </div> 
+	  	</div>
+	    </div>
+
+	    <div class="row">
+	   	<div class="col-xs-6 col-sm-3 col-md-3">
+	   		<label for="acknowledgeApp">Acknowledgement of Appointment Letter</label>
+	  	</div>
+		<div class="col-xs-6 col-sm-3 col-md-3">
+			<div class="onoffswitch">
+		    <input type="checkbox" name="acknowledgeApp" ng-model="documentation.acknowledgeApp" class="onoffswitch-checkbox" id="acknowledgeApp">
+		    <label class="onoffswitch-label" for="acknowledgeApp">
+		    <span class="onoffswitch-inner"></span>
+		    <span class="onoffswitch-switch"></span>
+		    </label>
+		    </div> 
+	  	</div>
+	    </div>
+  </form>
+</div>

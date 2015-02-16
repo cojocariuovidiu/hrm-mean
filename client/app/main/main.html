@@ -1,0 +1,111 @@
+<header class="hero-unit" id="banner">
+  <div class="container">
+  <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12">
+      <h1> Human Resource Management </h1>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+  <form class="form1" id="form1">
+    <div class="row" ng-if="message">
+      <div class="alert alert-danger">
+        <strong>Error!</strong> {{message}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-8 col-md-offset-2">
+        <label for="select"></label>
+        <select autofocus="autofocus" ng-model="employee"  name="employee" id="employee" ng-value="employee" ng-options="e as e.label for e in options" class="form-control">
+          <option value=''>- Select Employee Name -</option>
+        </select>
+      </div>
+    </div> <br/>
+
+    <div class="row">
+      <div class="col-xs-6 col-sm-3 col-md-4 col-md-offset-4">
+      <button type="button" class="btn btn-primary btn-lg" ng-click="add(employee)"> Initiate Joining </button>
+      </div>
+    </div> <br/>
+
+    <div class="row">
+      <div class="col-xs-6 col-sm-3 col-md-4 col-md-offset-4">
+      <button type="button" class="btn btn-primary btn-lg" ng-click="relieve(employee)"> Initiate Relieving </button>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-6 col-sm-3 col-md-4 col-md-offset-1" style="overflow:hidden; padding:3em 0;">
+      <div class="form-group">
+        <div class="input-group input-group-md">
+          <input type="text" ng-model="searchText" class="form-control" placeholder=" - Search By Employee Name - " id="inputGroup">
+          <span class="input-group-addon" ng-click="clear()"> <i class="fa fa-search"> </i>  </span>
+        </div>
+      </div>
+      </div>
+      <div class="col-xs-6 col-sm-3 col-md-4 col-md-offset-2">
+        <label class="checkbox"></label>
+          <input type="checkbox" ng-model="all" ng-click="isChecked(all)"/> All
+          <input type="checkbox" ng-model="pending"  ng-click="isChecked(pending)"/> Pending
+          <input type="checkbox" ng-model="complete" ng-click="isChecked(complete)" /> Complete
+      </div>
+    </div>
+    <div class="table-responsive">
+
+    <table id="employeeAll" class="table table-bordered">
+      <thead>
+        <tr>
+          <th> Employee ID </th>
+          <th> Employee Name </th>
+          <th> Pending Sections? </th>
+          <th> Status </th>
+          <th> Actions </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="edetail in employeeAll | filter: searchText " ng-if="(pending == true && (edetail.hr == 0 || edetail.documentation == 0 || edetail.rnbd == 0 || edetail.network == 0))  ||  (complete == true && (edetail.hr == 1 && edetail.documentation == 1 && edetail.rnbd == 1 && edetail.network == 1)) || all== true  "  >
+
+          <span ng-init="records=0">
+
+          <td> {{edetail.id}} </td>
+          <td> {{edetail.name}} </td>
+          <td>
+            <span ng-if="edetail.hr == 0">&nbsp;
+              <a href="#" ng-click="active(edetail , 'HR')"> HR </a> &nbsp;
+            </span>
+            <span ng-if="edetail.documentation == 0"> &nbsp;
+              <a href="#" ng-click="active(edetail , 'Documentation')"> Documentation </a> &nbsp;
+            </span>
+            <span ng-if="edetail.rnbd == 0"> &nbsp;
+              <a href="#" ng-click="active(edetail , 'Rnbd')"> R&BD </a> &nbsp;
+            </span>
+            <span ng-if="edetail.network == 0"> &nbsp;
+              <a href="#" ng-click="active(edetail , 'Network') ">  Network </a> &nbsp;
+            </span>
+            <span ng-if="edetail.hr == 1 && edetail.documentation == 1 && edetail.rnbd == 1 && edetail.network == 1">&nbsp; All Done &nbsp; </span>
+          </td>
+          <td>
+            <div name="pending" ng-model="pending" id="status">
+             <span ng-if="edetail.hr == 0 || edetail.documentation == 0 || edetail.rnbd == 0 || edetail.network == 0">
+             &nbsp; Pending &nbsp; </span>
+            </div>
+            <div name="complete" ng-model="complete" id="status">
+             <span ng-if="edetail.hr == 1 && edetail.documentation == 1 && edetail.rnbd == 1 && edetail.network == 1">
+             &nbsp; Complete &nbsp; </span>
+            </div>
+          </td>
+          <td>
+          <button type="button" class="btn btn-primary btn-sm" ng-click="view(edetail)"> View </button>
+          </td>
+        </tr>
+
+      </span>
+      </tbody>
+    </table>
+   </div>
+  </form>
+
+</div>

@@ -1,0 +1,33 @@
+<input type="checkbox" ng-model="search.state" ng-true-value="working">working
+    <input type="checkbox" ng-model="search.state" ng-true-value="broken">broken
+    <input type="checkbox" ng-model="search.state" ng-true-value="hosed">hosed
+<table>
+  <tr ng-repeat="metric in metrics | filter:search">
+      <td> {{ metric.name }}</td>
+      <td> - </td>
+      <td> {{ metric.state }}</td>
+  </tr>
+</table> 
+
+
+ <div class="col-xs-6 col-sm-3 col-md-4 col-md-offset-2" >
+        <label class="checkbox"></label>
+        <input type="checkbox" name="option1" ng-model="search.id" ng-true-value="" checked> All
+        <input type="checkbox" name="option2" ng-model="search.id" ng-true-value="2"> Pending
+        <input type="checkbox" name="option3" ng-model="search.id" ng-true-value="4"> Complete
+      </div>
+    </div>
+    <div> gfhgjknk: {{search.status}} </div>
+    <div class="table-responsive">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th> Employee ID </th>
+          <th> Employee Name </th>
+          <th> Pending Sections? </th>
+          <th> Status </th>
+          <th> Actions </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="employeedetail in employeeAll | filter:search">

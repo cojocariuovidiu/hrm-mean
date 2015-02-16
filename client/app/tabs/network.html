@@ -1,0 +1,164 @@
+<div class="container">
+  <form id="network-form" class="network-form">
+  	<div class="row" ng-if="Success">
+  		<div class="alert alert-success">
+        <strong>Success!</strong> {{Success}}
+    	</div>
+     </div> 
+     <div class="row" ng-if="Error">
+  		<div class="alert alert-danger">
+       	<strong>Error!</strong> {{Error}}
+    	</div>
+     </div>
+     <br/>
+	  <div class="row">
+	  	<div class="col-xs-6 col-sm-3 col-md-3 col-md-offset-3">
+	    <label for="person">Responsible Person :</label>
+	    </div>
+	    <div class="col-xs-6 col-sm-3 col-md-3">
+	    <select autofocus required name="person" id="person" class="form-control" ng-model="network.responsiblePerson"> 
+	    <option value=''>- Select Employee Name -</option> 
+	    <option value="1"> Hr Ritika Roshan </option>
+	    <option value="2"> Networking Ravi Kumar</option>
+	    <option value="3"> R&BD Rohit </option>
+	    <option value="4"> Docs person </option>
+	    </select> </br> </br>
+	    </div>
+	   </div> <br/>
+
+	   <div class="row">
+	  	<div class="col-xs-6 col-sm-4 col-md-4 col-md-offset-3">
+	   		<label for="firewallIp">Added static IP in Firewall?</label>
+	  	</div>
+		<div class="col-xs-3 col-sm-2 col-md-2">
+			<div class="onoffswitch">
+		    <input type="checkbox" name="firewallIp" ng-model="network.firewallIp" id="firewallIp" class="onoffswitch-checkbox">
+		    <label class="onoffswitch-label" for="firewallIp">
+		    <span class="onoffswitch-inner"></span>
+		    <span class="onoffswitch-switch"></span>
+		    </label>
+		    </div> 
+		</div>
+		</div>
+
+	  <div class="row">
+	    <div class="col-xs-6 col-sm-4 col-md-4 col-md-offset-3">
+	   		<label for="gmailId">Gmail Id – Create strong password and configured in thunderbird?</label>
+	  	</div>
+		<div class="col-xs-3 col-sm-2 col-md-2">
+			<div class="onoffswitch">
+		    <input type="checkbox" name="gmailId" ng-model="network.gmailId" class="onoffswitch-checkbox" id="gmailId">
+		    <label class="onoffswitch-label" for="gmailId">
+		    <span class="onoffswitch-inner"></span>
+		    <span class="onoffswitch-switch"></span>
+		    </label>
+		    </div> 
+		</div>
+		</div>
+
+	   <div class="row">
+	    <div class="col-xs-6 col-sm-4 col-md-4 col-md-offset-3">
+	   <label for="skypeId">Created Skype Id Email should be mss email and strong password?</label>
+	  	</div>
+		<div class="col-xs-3 col-sm-2 col-md-2">
+			<div class="onoffswitch">
+		    <input type="checkbox" name="skypeId" ng-model="network.skypeId" class="onoffswitch-checkbox" id="skypeId">
+		    <label class="onoffswitch-label" for="skypeId">
+		    <span class="onoffswitch-inner"></span>
+		    <span class="onoffswitch-switch"></span>
+		    </label>
+		    </div> 
+		</div>
+	    </div>
+	  
+	   <div class="row">
+	  	<div class="col-xs-6 col-sm-4 col-md-4 col-md-offset-3">
+	   <label for="redmine">Redmine Account</label>
+	  	</div>
+		<div class="col-xs-3 col-sm-2 col-md-2">
+			<div class="onoffswitch">
+		    <input type="checkbox" name="redmine" ng-model="network.redmine" class="onoffswitch-checkbox" id="redmine">
+		    <label class="onoffswitch-label" for="redmine">
+		    <span class="onoffswitch-inner"></span>
+		    <span class="onoffswitch-switch"></span>
+		    </label>
+		    </div> 
+		</div>
+	    </div>
+
+	  <div class="row">
+	  	<div class="col-xs-6 col-sm-4 col-md-4 col-md-offset-3">
+	   	<label for="bitBucket">Create Bitbucket Account</label>
+	  	</div>
+		<div class="col-xs-3 col-sm-2 col-md-2">
+			<div class="onoffswitch">
+		    <input type="checkbox" name="bitBucket" ng-model="network.bitBucket" class="onoffswitch-checkbox" id="bitBucket">
+		    <label class="onoffswitch-label" for="bitBucket">
+		    <span class="onoffswitch-inner"></span>
+		    <span class="onoffswitch-switch"></span>
+		    </label>
+		    </div> 
+		</div>
+		</div>
+
+	   <div class="row">
+	  	<div class="col-xs-6 col-sm-4 col-md-4 col-md-offset-3">
+	    <label for="git">Create Git Account</label>
+	  	</div>
+		<div class="col-xs-3 col-sm-2 col-md-2">
+			<div class="onoffswitch">
+		    <input type="checkbox" name="git" ng-model="network.git" class="onoffswitch-checkbox" id="git">
+		    <label class="onoffswitch-label" for="git">
+		    <span class="onoffswitch-inner"></span>
+		    <span class="onoffswitch-switch"></span>
+		    </label>
+		    </div> 
+		</div>
+	    </div>
+
+		<div class="row">
+	    <div class="col-xs-6 col-sm-4 col-md-4 col-md-offset-3">
+	   <label for="dropbox">Create Dropbox Account</label>
+	  	</div>
+		<div class="col-xs-3 col-sm-2 col-md-2">
+			<div class="onoffswitch">
+		    <input type="checkbox" name="dropbox" ng-model="network.dropbox" class="onoffswitch-checkbox" id="dropbox">
+		    <label class="onoffswitch-label" for="dropbox">
+		    <span class="onoffswitch-inner"></span>
+		    <span class="onoffswitch-switch"></span>
+		    </label>
+		    </div> 
+		</div>
+	    </div>
+
+	    <div class="row">
+	    <div class="col-xs-6 col-sm-4 col-md-4 col-md-offset-3">
+	   <label for="localDBUser">Create Local Database User</label>
+	  	</div>
+		<div class="col-xs-3 col-sm-2 col-md-2">
+			<div class="onoffswitch">
+		    <input type="checkbox" name="localDBUser" ng-model="network.localDBUser" class="onoffswitch-checkbox" id="localDBUser">
+		    <label class="onoffswitch-label" for="localDBUser">
+		    <span class="onoffswitch-inner"></span>
+		    <span class="onoffswitch-switch"></span>
+		    </label>
+		    </div> 
+		</div>
+	    </div>
+
+	    <div class="row">
+	    <div class="col-xs-6 col-sm-4 col-md-4 col-md-offset-3">
+	   <label for="localFTP">Create Local FTP Account</label>
+	  	</div>
+		<div class="col-xs-3 col-sm-2 col-md-2">
+			<div class="onoffswitch">
+		    <input type="checkbox" name="localFTP" ng-model="network.localFTP" class="onoffswitch-checkbox" id="localFTP">
+		    <label class="onoffswitch-label" for="localFTP">
+		    <span class="onoffswitch-inner"></span>
+		    <span class="onoffswitch-switch"></span>
+		    </label>
+		    </div> 
+		</div>
+	    </div>
+  </form>
+</div>

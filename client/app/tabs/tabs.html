@@ -1,0 +1,27 @@
+<header class="hero-unit" id="banner">
+    <div class="container">  
+      <div class="row">  
+	  	<div class="col-xs-12 col-sm-6 col-md-8 col-md-offset-2">
+		<h2>Joining Checklist of [ {{employee.name}}] / [ {{employee.id}} ] </h2>
+		</div>
+      </div>
+    </div>
+    <div class="row">
+	  	<div class="col-xs-6 col-sm-3 col-md-3">
+	   	<button type="button" class="btn mybtn" ng-click="back()">Back</button>
+	    </div>
+	    <div class="col-xs-6 col-sm-3 col-md-3 col-md-offset-6">
+	    <button type="button" class="btn mybtn" ng-click="save()">Save changes</button>
+	    </div>
+	</div> <br/>
+</header>
+
+<div class="container">
+	<div class="navbar">
+		<tabset>
+		    <tab ng-repeat="tab in tabs" heading="{{tab.title}}" style="width:25%;" active="tab.active" ng-click="setActive(tab.title)" >
+		      <div ng-include src="tab.template"></div>
+		    </tab>
+	  	</tabset>
+    </div>
+</div>
